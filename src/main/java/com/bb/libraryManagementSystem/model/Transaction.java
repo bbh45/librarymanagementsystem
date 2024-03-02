@@ -1,6 +1,6 @@
 package com.bb.libraryManagementSystem.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 

@@ -4,11 +4,9 @@ import com.bb.libraryManagementSystem.model.Author;
 import com.bb.libraryManagementSystem.model.Genre;
 import com.bb.libraryManagementSystem.model.Student;
 import com.bb.libraryManagementSystem.model.Transaction;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 import java.util.List;
@@ -25,7 +23,9 @@ public class BookSeachResponse {
     private Genre genre;
     @JsonIgnoreProperties({"bookList","addedOn"})
     private Author author;
+    @JsonIgnoreProperties({"accountStatus","myUser","bookList","transactionList","creationDate","updatedDate"})
     private Student student;
+    @JsonIgnore
     private List<Transaction> transactionList;
     private Date creationDate;
     private Date updatedDate;

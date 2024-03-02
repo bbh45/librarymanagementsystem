@@ -1,6 +1,6 @@
 package com.bb.libraryManagementSystem.service;
 
-import com.bb.libraryManagementSystem.Exception.TransactionServiceException;
+import com.bb.libraryManagementSystem.exception.TransactionServiceException;
 import com.bb.libraryManagementSystem.model.Book;
 import com.bb.libraryManagementSystem.model.Student;
 import com.bb.libraryManagementSystem.model.Transaction;
@@ -35,9 +35,9 @@ public class TransactionService {
     Logger logger = LoggerFactory.getLogger(TransactionService.class);
     public String createIssueTransaction(Integer studentId, Integer bookId) throws TransactionServiceException{
         Student student = studentService.findStudentById(studentId);
-        if(student == null){
-            throw new TransactionServiceException("Student is not present in Library");
-        }
+//        if(student == null){
+//            throw new TransactionServiceException("Student is not present in Library");
+//        }
 
         List<Book> books = bookService.findBooks(BookFilterType.BOOK_ID, String.valueOf(bookId));
         if(books == null || books.size() != 1 || books.get(0).getStudent() != null){
@@ -62,9 +62,9 @@ public class TransactionService {
 
     public String createReturnTransaction(Integer studentId, Integer bookId) throws TransactionServiceException{
         Student student = studentService.findStudentById(studentId);
-        if(student == null){
-            throw new TransactionServiceException("Student is not present in Library");
-        }
+//        if(student == null){
+//            throw new TransactionServiceException("Student is not present in Library");
+//        }
 
         List<Book> books = bookService.findBooks(BookFilterType.BOOK_ID, String.valueOf(bookId));
         if(books == null || books.size() != 1){

@@ -3,9 +3,7 @@ package com.bb.libraryManagementSystem.request;
 import com.bb.libraryManagementSystem.model.Author;
 import com.bb.libraryManagementSystem.model.Book;
 import com.bb.libraryManagementSystem.model.Genre;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import javax.validation.constraints.*;
 import lombok.*;
 
 @Getter
